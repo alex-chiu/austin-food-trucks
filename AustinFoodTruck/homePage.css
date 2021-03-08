@@ -14,15 +14,15 @@ ul {
     padding: 0;
     overflow: hidden;
     background-color: rgb(255, 255, 255);
-  }
+}
   
 li {
-    float: left;
+    flex: 1 1 25%;
+    justify-content: center;
 }
 
 li a {
     display: inline-block;
-
     color: rgb(226, 124, 8);
     text-align: center;
     padding: 25px 110px;
@@ -37,7 +37,7 @@ li a:hover {
     color: rgb(0, 0, 0);
 }
 
-p {
+#description {
     font-family: helvetica; 
     font-size: 20px;
     text-align: center;
@@ -48,4 +48,36 @@ p {
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+#nav-bar {
+    border: 2px solid black;
+    border-radius: 5px;
+    margin: 10px 0px;
+    display: flex;
+    flex-direction: row;
+}
+
+#footer {
+    border: 2px solid black;
+    border-radius: 5px;
+    margin: 10px 0px;
+    display: flex;
+    flex-direction: row;
+    background-color: #d3d3d3;
+    align-items: center;
+}
+
+#contact {
+    flex: 1 1 75%;
+    font-family: helvetica; 
+    font-size: 18px;
+    text-align: center;
+}
+
+#signature {
+    flex: 1 1 25%;
+    font-family: helvetica; 
+    font-size: 18px;
+    text-align: center;
 }
