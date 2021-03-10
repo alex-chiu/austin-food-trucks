@@ -7,11 +7,86 @@
 	<meta charset="UTF-8">
 	<meta name="description" content="about">
 	<meta name="author" content="Group 2">
+	<link rel="stylesheet" href="about.css">
 </head> 
 
 <body>
 
-about us
+	<div class="container">
+		<div id="header">
+			<img id="logo" src="./images/logo.jpeg" alt="logo" width="15%">
+
+			<ul id="nav-bar">
+				<li><a href="./homePage.html">HOME</a></li>
+				<li><a href="./reviewsPage.html">REVIEWS</a></li>
+				<li><a href="./mapPage.html">MAP</a></li>
+				<li><a href="./aboutPage.html">ABOUT</a></li>
+			</ul>
+		</div>
+
+		<div id="about-us">
+
+			<div id="title">
+				<h1>Who We Are</h1> 
+			</div>
+
+			<div id="cards">
+				<div class="card">
+					<img src="./images/AustinFoodTruck_Logo.jpeg" alt="avatar" width="200px">
+					<div class="card-text">
+						<h4> <b>Robert Martinez</b> </h4>
+						<p>Role: Developer <br>About: I am a third year Math major pursuing a career in software developmennt. </p>
+					</div>
+				</div>
+
+				<div class="card">
+					<img src="./images/AustinFoodTruck_Logo.jpeg" alt="avatar" width="200px">
+					<div class="card-text">
+						<h4> <b>XXXXXX</b> </h4>
+						<p>Role xxx <br>About xxx </p>
+					</div>
+				</div>
+
+				<div class="card">
+					<img src="./images/AustinFoodTruck_Logo.jpeg" alt="avatar" width="200px">
+					<div class="card-text">
+						<h4> <b>XXXXXX</b> </h4>
+						<p>Role xxx <br>About xxx </p>
+					</div>
+				</div>
+
+				<div class="card">
+					<img src="./images/AustinFoodTruck_Logo.jpeg" alt="avatar" width="200px">
+					<div class="card-text">
+						<h4> <b>XXXXXX</b> </h4>
+						<p>Role xxx <br>About xxx </p>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		
+	</div>
+
+	<div class="container" id="contact-form">
+		<form action="mailto:austinfoodtrucks@austinfoodtrucks.com">
+
+			<h1>Contact Us</h1>
+
+			<label for="name"> Name</label>
+			<input type="text" id="name" name="name" placeholder="Your name..">
+
+			<label for="email">Email</label>
+			<input type="text" id="email" name="email" placeholder="youremail@email.com">
+
+			<label for="subject">Subject</label>
+			<textarea id="subject" name="subject" placeholder="Leave a comment" style="height:200px"></textarea>
+
+			<input type="submit" value="Send">
+			<input type="reset" value="Reset">
+
+		</form>
+	</div>
 
 </body>
 </html>
