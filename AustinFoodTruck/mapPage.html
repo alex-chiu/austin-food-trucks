@@ -8,6 +8,12 @@
 	<meta name="description" content="map">
 	<meta name="author" content="Group 2">
 	<link rel="stylesheet" href="mapPage.css">
+
+	<script src="map.js" defer></script>
+	<script src="https://unpkg.com/@googlemaps/markerclustererplus/dist/index.min.js"></script>
+
+
+
 </head> 
 
 <body>
@@ -22,12 +28,12 @@
 		<li><a href="./aboutPage.html">ABOUT</a></li>
 	</ul>
 
-	<br>
-	<br>
-	<br>
-	map
-	<br>
-	<br>
+	<div id="map"></div>
+
+	<script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWh3WusfJbB7AKtA7lPMCFq24JEfg3W9s&callback=initMap&libraries=&v=weekly"
+      async
+    ></script>
 
 	<div id="footer">
 		<div id="contact">
