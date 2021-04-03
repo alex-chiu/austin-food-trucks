@@ -67,3 +67,53 @@ li a:hover {
     font-size: 18px;
     text-align: center;
 }
+
+.truckInfo{
+    padding: 6px;
+}
+
+#allTrucks{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.trucks{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.truckNames{
+    font-family: 'Courier New';
+    text-align: left;
+    font-size: 30px;
+    margin: 0%;
+    padding: 0%;
+}
+
+.ratings{
+    float: right;
+    font-size: 25px;
+}
+
+.num{
+   
+    padding: 0%;
+    margin: 0%;
+}
+
+.addy{
+    
+    padding: 0%;
+    margin: 0%;
+}
+
+.websites{
+
+    padding: 0%;
+    margin: 0%;
+}
+
+a[href^="tel"]::before {
+    content: "📞 ";
+}
