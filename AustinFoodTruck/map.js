@@ -8,7 +8,7 @@ function initMap() {
     zoom: 10,
     center: center,
   });
-  // The marker, positioned at Uluru
+//   The marker, positioned at Uluru
 //   const marker = new google.maps.Marker({
 //     position: center,
 //     map: map,
@@ -33,4 +33,3 @@ const locations = [
     { lat: 30.450730, lng: -97.785000 },
     { lat: 30.2496659, lng: -97.7523408}
   ];
-  
