@@ -7,25 +7,28 @@
     margin-left: auto;
     margin-right: auto;
 }
-
-ul {
+  
+#nav-bar {
     list-style-type: none;
-    margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: rgb(255, 255, 255);
+    border: 2px solid black;
+    border-radius: 5px;
+    margin: 10px 0px;
+    display: flex;
+    flex-direction: row;
 }
-  
+
 li {
     flex: 1 1 25%;
+    padding: 20px 0px;
     justify-content: center;
+    text-align: center;
 }
 
 li a {
-    display: inline-block;
     color: rgb(226, 124, 8);
-    text-align: center;
-    padding: 25px 110px;
     text-decoration: none;
     font-family: helvetica; 
     font-size: 20px;
@@ -37,25 +40,17 @@ li a:hover {
     color: rgb(0, 0, 0);
 }
 
-#description {
-    font-family: helvetica; 
-    font-size: 20px;
-    text-align: center;
-    font-weight: bold;
-}
-
 #homePageImg {
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
 
-#nav-bar {
-    border: 2px solid black;
-    border-radius: 5px;
-    margin: 10px 0px;
-    display: flex;
-    flex-direction: row;
+#description {
+    font-family: helvetica; 
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
 }
 
 #footer {
