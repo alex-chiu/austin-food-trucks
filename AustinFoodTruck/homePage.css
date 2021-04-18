@@ -2,12 +2,36 @@
     width: 100%;
 }
 
+#logo-div {
+    width: 14%;
+    margin-left: 43%;
+    margin-right: 30%;
+    margin-bottom: 10px;
+    float: left;
+}
+
 #logo {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
 }
-  
+
+#login {
+    color: rgb(226, 124, 8);
+    text-decoration: none;
+    font-family: helvetica; 
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#login p {
+    position: relative;
+    top: 60px;
+}
+
+#login-button {
+    margin-top: 60px;
+}
+
 #nav-bar {
     list-style-type: none;
     padding: 0;
@@ -15,9 +39,10 @@
     background-color: rgb(255, 255, 255);
     border: 2px solid black;
     border-radius: 5px;
-    margin: 10px 0px;
+    margin-bottom: 20px;
     display: flex;
     flex-direction: row;
+    width: 100%;
 }
 
 li {
@@ -33,6 +58,25 @@ li a {
     font-family: helvetica; 
     font-size: 20px;
     font-weight: bold;
+    text-align: center;
+}
+
+#content {
+    color: rgb(226, 124, 8);
+    text-decoration: none;
+    font-family: helvetica; 
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#input table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#buttons {
+    margin-top: 10px;
     text-align: center;
 }
 

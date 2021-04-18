@@ -14,24 +14,4 @@ function verifyForm() {
         alert("Please Enter a Valid Email!");
         validForm = false;
     }
-
-    console.log("Validated Data!")
-
-    /*
-    // Populate Form Data
-    if (validForm) {
-        let fs = require("fs");
-        fs.readFile("feedback.json", "utf8", function readFileCallback(err, data) {
-            if (err) {
-                console.log(err);
-            }
-            else {
-                let arr = JSON.parse(data);
-                arr.table.push({name: $("#name").val(), email: $("#email").val(), content: $("#subject").val()});
-                json = JSON.stringify(arr);
-                fs.writeFile("feedback.json", json, "utf8", callback);
-            }
-        });
-    }
-    */
 }

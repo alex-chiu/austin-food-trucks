@@ -13,15 +13,14 @@
             integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
             crossorigin="anonymous">
     </script>
-    <script src="homePage.js" defer></script>
+    <script src="login.js" defer></script>
 </head> 
 
-<body onload="checkLogin();">
+<body>
 <div id="container">
     <div id="logo-div">
         <a href="./homePage.html"><img id="logo" src="./images/logo.jpeg" alt="logo" width="100%"></a>
     </div>
-    <div id="login"></div>
 
     <ul id="nav-bar">
         <li><a href="./homePage.html">HOME</a></li>
@@ -30,8 +29,25 @@
         <li><a href="./aboutPage.html">ABOUT</a></li>
     </ul>
 
-    <img id="homePageImg" src="./images/homePageImg.jpg" alt="austin" width="100%">
-    
+    <div id="content">
+        <div id='input'>
+            <p>LOGIN:</p>
+            <table>
+                <tr>
+                    <th><label for='username'>Username</label></th>
+                    <td><input type='text' id='username' name='username'></td>
+                </tr>
+                <tr>
+                    <th><label for='pwd'>Password</label></th>
+                    <td><input type='password' id='pwd' name='pwd'></td>
+                </tr>
+            </table>
+        </div>
+        <div id='buttons'>
+            <button id='login'>Login</button>
+        </div>
+    </div>
+
     <p id="description">Austin has a thriving food truck scene and with so many options, it can get hard to decide where to eat. That’s why we’re here! Discover the best food trucks options in Austin!</p>
 
     <div id="footer">
