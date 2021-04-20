@@ -3,11 +3,12 @@
 <html lang="en">
 
 <head>
-	<title>Austin's Food Trucks: Reviews</title>
+	<title>Reviews - Austin's Food Trucks</title>
 	<meta charset="UTF-8">
 	<meta name="description" content="reviews">
 	<meta name="author" content="Group 2">
 	<link rel="stylesheet" href="reviewsPage.css">
+	<script type="text/javascript" src="reviewsPage.js" defer></script>
 </head> 
 
 <body>
@@ -24,7 +25,7 @@
 
 	<form>
 		<label for="trucks">Let me see:</label>
-		<select name="trucks" id="trucks">
+		<select name="trucks" id="trucks" onmousedown="this.value='';" onchange="selection(this.value);">
 			<option value="all">All</option>
 			<option value="best">Highest Rated</option>
 			<option value="mexican">Mexican Food</option>
@@ -34,6 +35,8 @@
 		</select>
 	</form>
 	
+	<!-- All trucks -->
+	<div id="all">
 	<table id="allTrucks" border="1" style="width:75%">
 		<tr>
 			<th width="20%">
@@ -229,6 +232,61 @@
 			</th>
 		</tr>
 	</table>
+	</div>
+
+
+
+
+	<div id="best">
+	<table id="allTrucks" border="1" style="width:75%">
+		<tr>
+			<th width="20%">
+				<div class="dropdown">
+					<img class="trucks" src="./images/truckPicnic.jpg" width="140px" height= "150px">
+					<div class="dropdown-content">
+						<img class="trucks" src="./images/truckPicnic.jpg" width="280px" height= "300px">
+						<div class="desc">The Picnic at Barton Springs</div>
+					</div>
+				</div>
+				
+			</th>
+			<th class="truckInfo">
+				<table style="width:100%" height= "150px">
+					<tr>
+						<th colspan="2" class="truckNames">The Picnic</th>
+						<th></th>
+						<th class="ratings">4.6</th>
+					</tr>
+
+					<tr>
+						<th colspan="3">Outdoor eating destination featuring a wide variety of food trucks and retail vendors.</th>
+					</tr>
+
+					<tr>
+						<th width="33%" class="num"><a href="mailto:PicnicAustin@gmail.com">PicnicAustin@gmail.com</a></th>
+						<th width="33%" class="addy">1720 Barton Springs Rd, Austin, TX 78704</th>
+						<th width="33%" class="websites"><a href="https://www.thepicnicaustin.com/" target="_blank">Website!</a></th>
+					</tr>
+				</table>
+			</th>
+		</tr>
+	</table>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	<br>
 	<br>
