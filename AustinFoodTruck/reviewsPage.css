@@ -147,3 +147,23 @@ a[href^="tel"]::before {
 #best {
     display:none;
 }
+
+#italian {
+    display:none;
+}
+
+#asian {
+    display:none;
+}
+
+#mediterranean {
+    display:none;
+}
+
+#mexican {
+    display:none;
+}
+
+#sa {
+    display:none;
+}
