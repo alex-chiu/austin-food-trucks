@@ -167,3 +167,11 @@ a[href^="tel"]::before {
 #sa {
     display:none;
 }
+
+#american {
+    display:none;
+}
+
+#dessert {
+    display:none;
+}

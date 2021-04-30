@@ -1,4 +1,4 @@
-selections = ["all", "best", "italian", "sa", "mexican", "asian", "mediterranean"]
+selections = ["all", "best", "italian", "sa", "mexican", "asian", "mediterranean", "dessert", "american"]
 
 function selection(value){
    if (value == "all"){
@@ -56,6 +56,24 @@ function selection(value){
 
    if (value == "mediterranean"){
       document.getElementById("mediterranean").style.display = "block";
+      for (let i = 0; i <= selections.length; i++){
+         if (selections[i] != value){
+            document.getElementById(selections[i]).style.display = "none";
+         }
+      }
+   }
+
+   if (value == "american"){
+      document.getElementById("american").style.display = "block";
+      for (let i = 0; i <= selections.length; i++){
+         if (selections[i] != value){
+            document.getElementById(selections[i]).style.display = "none";
+         }
+      }
+   }
+
+   if (value == "dessert"){
+      document.getElementById("dessert").style.display = "block";
       for (let i = 0; i <= selections.length; i++){
          if (selections[i] != value){
             document.getElementById(selections[i]).style.display = "none";
