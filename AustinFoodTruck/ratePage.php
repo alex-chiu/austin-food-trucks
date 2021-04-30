@@ -15,6 +15,16 @@
 
 <body>
 
+<script language = "javascript" type = "text/javascript">
+        function displayMessage(){
+            // if food truck name is valid and user selected a rating
+            alert("Thanks for leaving a rating!");
+            // if food truck name is not valid display alert saying not valid
+            
+            // if food truck name is valid but did not select a rating display alert saying pls select rating
+        }
+</script>
+
 <div id="container">
 	<a href="./homePage.php"><img id="logo" src="./images/logo.jpeg" alt="logo" width="8%"></a>
 
@@ -40,7 +50,7 @@
 <div id="rateForm">
     <form action="" align="center">
         <label for="foodTruckName">Food Truck Name</label>
-        <input type="text" name="foodTruckName" id="foodTruckName"> <br>
+        <input type="text" name="foodTruckName" id="foodTruckName" required> <br>
 
         <p>Star Ratings: </p>
         <input type="radio" id="oneStar" name="stars" value="1">
@@ -58,7 +68,7 @@
         <label for="review">Review of Food Truck</label> <br>
         <textarea id="review" name="review" placeholder="Leave a review" style="height:200px; width:300px"></textarea>
 
-        <input type="submit" value="Rate"/>
+        <input type="submit" value="Rate" onclick="displayMessage(); return false"/>
 		<input type="reset" value="Reset"/>
 
     </form>

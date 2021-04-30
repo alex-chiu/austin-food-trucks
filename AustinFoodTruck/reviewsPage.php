@@ -9,6 +9,49 @@
 	<meta name="author" content="Group 2">
 	<link rel="stylesheet" href="reviewsPage.css">
 	<script type="text/javascript" src="reviewsPage.js" defer></script>
+	<style>
+	.collapsible {
+		background-color: #ebab46;
+		color: white;
+		cursor: pointer;
+		padding: 10px;
+		width: 25%;
+		border: none;
+		text-align: center;
+		outline: none;
+		display: block;
+		font-size: 15px;
+		margin-left: auto;
+    	margin-right: auto;
+	}
+
+	.active, .collapsible:hover {
+		background-color: #000000;
+	}
+
+	.content {
+		padding: 0 18px;
+		display: none;
+		overflow: hidden;
+		background-color: #ebab46;
+		width: 25%;
+		margin-left: auto;
+    	margin-right: auto;
+	}
+
+	#suggestB{
+		background-color: #3c3d31;
+		border: none;
+		color: white;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 12px;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	</style>
 </head> 
 
 <body>
@@ -27,6 +70,37 @@
         }
         ?>
     </ul>
+
+	<?php
+        if( isset($_COOKIE["login"]) and $_COOKIE["login"] == "valid"){
+            echo '<button type="button" class="collapsible">Suggest a food truck you want to see on here!</button>';
+			echo '
+			<div class="content">
+			  <form>
+			  <input type="text" name="truckSuggested" id="truckSuggested" required>
+			  <br>
+			  <input id="suggestB" type="submit" value="Suggest"/>
+			  </form>
+			</div>
+			';
+        }
+        ?>
+		<script>
+			var coll = document.getElementsByClassName("collapsible");
+			var i;
+
+			for (i = 0; i < coll.length; i++) {
+			coll[i].addEventListener("click", function() {
+				this.classList.toggle("active");
+				var content = this.nextElementSibling;
+				if (content.style.display === "block") {
+				content.style.display = "none";
+				} else {
+				content.style.display = "block";
+				}
+			});
+			}
+			</script>
 
 	<form>
 		<label for="trucks">Let me see:</label>

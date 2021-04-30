@@ -31,11 +31,15 @@
     </ul>
 
     <img id="homePageImg" src="./images/homePageImg.jpg" alt="austin" width="100%">
-    <div align="center"><audio controls autoplay>
+    <div align="center"><audio controls autoplay id="myaudio">
         <source src="images/alright.mp3" type="audio/mpeg">
       Your browser does not support the audio element.
     </audio>
     </div>
+    <script>
+        var audio = document.getElementById("myaudio");
+        audio.volume = 0.2;
+      </script>
     
     <p id="description">Austin has a thriving food truck scene and with so many options, it can get hard to decide where to eat. That’s why we’re here! Discover the best food trucks options in Austin!</p>
     <p id="description">Check out this <a href="https://www.youtube.com/watch?v=XtyP_kYlYTw">video</a> to discover the variety of Austin's foodtruck and don't hesitate to browse the youtube channel as well!</p>
