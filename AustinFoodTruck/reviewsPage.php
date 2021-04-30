@@ -17,11 +17,16 @@
 	<a href="./homePage.php"><img id="logo" src="./images/logo.jpeg" alt="logo"></a>
 
 	<ul id="nav-bar">
-		<li><a href="./homePage.php">HOME</a></li>
-		<li><a href="./reviewsPage.html">REVIEWS</a></li>
-		<li><a href="./mapPage.html">MAP</a></li>
-		<li><a href="./aboutPage.html">ABOUT</a></li>
-	</ul>
+        <li><a href="./homePage.php">HOME</a></li>
+        <li><a href="./reviewsPage.php">REVIEWS</a></li>
+        <li><a href="./mapPage.php">MAP</a></li>
+        <li><a href="./aboutPage.php">ABOUT</a></li>
+        <?php
+        if( isset($_COOKIE["login"]) and $_COOKIE["login"] == "valid"){
+            echo '<li><a href="./ratePage.php">RATE</a></li> ';
+        }
+        ?>
+    </ul>
 
 	<form>
 		<label for="trucks">Let me see:</label>

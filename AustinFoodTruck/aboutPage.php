@@ -23,9 +23,14 @@
 
 			<ul id="nav-bar">
 				<li><a href="./homePage.php">HOME</a></li>
-				<li><a href="./reviewsPage.html">REVIEWS</a></li>
-				<li><a href="./mapPage.html">MAP</a></li>
-				<li><a href="./aboutPage.html">ABOUT</a></li>
+				<li><a href="./reviewsPage.php">REVIEWS</a></li>
+				<li><a href="./mapPage.php">MAP</a></li>
+				<li><a href="./aboutPage.php">ABOUT</a></li>
+                <?php
+                    if( isset($_COOKIE["login"]) and $_COOKIE["login"] == "valid"){
+                        echo '<li><a href="./ratePage.php">RATE</a></li> ';
+                    }
+                ?>
 			</ul>
 		</div>
 
@@ -37,7 +42,7 @@
 
 			<div id="cards">
 				<div class="card">
-					<img src="./images/AustinFoodTruck_Logo.jpeg" alt="avatar">
+					<img src="./images/robsProfile.jpg" alt="avatar">
 					<div class="card-text">
 						<h4><b>Robert Martinez</b></h4>
 						<p>Role: Developer<br>About: I am a third year Math major pursuing a career in software development.</p>

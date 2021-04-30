@@ -1,3 +1,10 @@
+<?php
+function logout(){
+    setcookie("login", "valid", time()-3600, "/");
+}
+logout();
+
+?>
 <!DOCTYPE html>
 
 <html lang="en">
@@ -19,7 +26,7 @@
 <body>
 <div id="container">
     <div id="logo-div">
-        <a href="./homePage.php"><img id="logo" src="./images/logo.jpeg" alt="logo" width="100%"></a>
+        <a href="./homePage.html"><img id="logo" src="./images/logo.jpeg" alt="logo" width="100%"></a>
     </div>
 
     <ul id="nav-bar">
@@ -30,25 +37,10 @@
     </ul>
 
     <div id="content">
-        <div id='input'>
-            <p>LOGIN:</p>
-            <table>
-                <tr>
-                    <th><label for='username'>Username</label></th>
-                    <td><input type='text' id='username' name='username'></td>
-                </tr>
-                <tr>
-                    <th><label for='pwd'>Password</label></th>
-                    <td><input type='password' id='pwd' name='pwd'></td>
-                </tr>
-            </table>
-        </div>
-        <div id='buttons'>
-            <button id='login'>Login</button>
-        </div>
+        <p>Thank you for logging out. Come back and visit us soon! </p>
     </div>
 
-    <p id="description">Austin has a thriving food truck scene and with so many options, it can get hard to decide where to eat. That’s why we’re here! Discover the best food trucks options in Austin!</p>
+    
 
     <div id="footer">
         <div id="contact">

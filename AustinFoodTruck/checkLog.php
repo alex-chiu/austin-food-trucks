@@ -19,7 +19,7 @@ if (isset($_POST['username']) && isset($_POST['pwd'])) {
     if ($login_success == true) {
         $_SESSION['username'] = $_POST['username'];
         echo("  <p>Login Successful!</p>
-                <p><a href='./homePage.html'>Return to Home Page</a></p>
+                <p><a href='./homePage.php'>Return to Home Page</a></p>
         ");
         setcookie("login", "valid", time() + 86400, "/");
     }
