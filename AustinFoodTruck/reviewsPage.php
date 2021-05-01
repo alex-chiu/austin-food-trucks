@@ -15,7 +15,6 @@
 		color: white;
 		cursor: pointer;
 		padding: 10px;
-		width: 25%;
 		border: none;
 		text-align: center;
 		outline: none;
@@ -34,7 +33,6 @@
 		display: none;
 		overflow: hidden;
 		background-color: #ebab46;
-		width: 25%;
 		margin-left: auto;
     	margin-right: auto;
 	}
@@ -50,6 +48,13 @@
 		display: block;
 		margin-left: auto;
 		margin-right: auto;
+	}
+
+	#buttons{
+		width: 25%;
+		margin-left: auto;
+		margin-right: auto; 
+		font-family: Tahoma ; 
 	}
 	</style>
 </head> 
@@ -72,35 +77,68 @@
     </ul>
 
 	<?php
+		session_start();
         if( isset($_COOKIE["login"]) and $_COOKIE["login"] == "valid"){
-            echo '<button type="button" class="collapsible">Suggest a food truck you want to see on here!</button>';
+			//echo $_SESSION['username'];
+			echo '<table id="buttons">';
+			echo '<tr>';
+			echo '<td style="width:10%"></td>';
+			echo '<td><button type="button" class="collapsible">All suggestions</button>';
+			echo '<div class="content">';
+			echo "<table>";
+			$mysqli = new mysqli ("spring-2021.cs.utexas.edu", "cs329e_bulko_edoardop", "viking-leper9none", "cs329e_bulko_edoardop");
+			$query = "SELECT * FROM truckssuggestions";
+			$result = $mysqli->query($query);
+			while($row = $result->fetch_row()){ 
+				echo "<tr><td>" . $row[0] . "</td><td>" . $row[1] . "</td></tr>";
+			}
+			echo "</table>";
+			echo '</div></td>';
+			echo '<td><button type="button" class="collapsible">Suggest a food truck you want to see on here!</button>';
 			echo '
 			<div class="content">
-			  <form>
+			  <form method = "POST">
 			  <input type="text" name="truckSuggested" id="truckSuggested" required>
 			  <br>
 			  <input id="suggestB" type="submit" value="Suggest"/>
 			  </form>
-			</div>
+			</div></td>
 			';
-        }
-        ?>
-		<script>
-			var coll = document.getElementsByClassName("collapsible");
-			var i;
+			echo '</tr>';
+			echo '</table>';
 
-			for (i = 0; i < coll.length; i++) {
-			coll[i].addEventListener("click", function() {
-				this.classList.toggle("active");
-				var content = this.nextElementSibling;
-				if (content.style.display === "block") {
-				content.style.display = "none";
-				} else {
-				content.style.display = "block";
+			if (isset($_POST["truckSuggested"])){ 
+				$mysqli = new mysqli ("spring-2021.cs.utexas.edu", "cs329e_bulko_edoardop", "viking-leper9none", "cs329e_bulko_edoardop");
+				$truck = $_POST["truckSuggested"];
+				$command = "SELECT * FROM truckssuggestions WHERE suggestion='$truck'";
+				$result = $mysqli->query($command);
+				if ($result->num_rows === 0){
+					$command = "INSERT INTO truckssuggestions VALUES('$truck', 1)";
+					$result = $mysqli->query($command);
 				}
-			});
+				else{
+					$command = "UPDATE truckssuggestions SET number=number+1 WHERE suggestion='$truck'";
+					$result = $mysqli->query($command);
+				}
 			}
-			</script>
+        }
+    ?>
+	<script language = "javascript" type = "text/javascript">
+		var coll = document.getElementsByClassName("collapsible");
+		var i;
+
+		for (i = 0; i < coll.length; i++) {
+		coll[i].addEventListener("click", function() {
+			this.classList.toggle("active");
+			var content = this.nextElementSibling;
+			if (content.style.display === "block") {
+			content.style.display = "none";
+			} else {
+			content.style.display = "block";
+			}
+		});
+		}
+	</script>
 
 	<form>
 		<label for="trucks">Let me see:</label>
