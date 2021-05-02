@@ -23,18 +23,13 @@
     </div>
     <div id="login"></div>
     <?php
-        if( isset($_COOKIE["login"]) and $_COOKIE["login"] == "valid"){
-            echo '<div id="logout"> 
-                <form method="POST" action="./logout.php">
-                    <input type="submit" value="logout" name="logout">
-                </form>
-            </div>';
+        if(isset($_COOKIE["login"]) and $_COOKIE["login"] == "valid") {
+            echo (' <div id="logout"> 
+                        <form method="POST" action="./logout.php">
+                            <input type="submit" value="Logout" name="logout">
+                        </form>
+                    </div>');
         }
-        // else{
-        //     setcookie("login", "invalid", time() + 86400, "/");
-        // }
-
-    
     ?>
 
     <ul id="nav-bar">

@@ -3,13 +3,15 @@ session_start();
 // Checks if username and password are sent by POST
 if (isset($_POST['username']) && isset($_POST['pwd'])) {
     $login_success = false;
+    $username = $_POST['username'];
+    $pwd = $_POST['pwd'];
     $f = fopen("pwd.txt", "r") or die("Unable to Open File!");
 
     // Check if username and password combination exists
     while (!feof($f)) {
         $line = trim(fgets($f), " \n");
         $line = explode(":", $line);
-        if (($line[0] == $_POST['username']) and ($line[1] == $_POST['pwd'])) {
+        if (strcmp($line[0], $username) and strcmp($line[1], $pwd)) {
             $login_success = true;
         }
     }
