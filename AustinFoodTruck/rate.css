@@ -2,29 +2,11 @@
     width: 100%;
 }
 
-#logo-div {
-    width: 14%;
-    margin-left: 43%;
-    margin-right: 30%;
-    margin-bottom: 10px;
-    float: left;
-}
-
 #logo {
     display: block;
-}
-
-#login {
-    color: rgb(226, 124, 8);
-    text-decoration: none;
-    font-family: helvetica; 
-    font-size: 16px;
-    font-weight: bold;
-    text-align: center;
-}
-
-#login-button {
-    margin-top: 60px;
+    float: left;
+    margin-right: 2%;
+    width: 90px;    
 }
 
 #nav-bar {
@@ -34,12 +16,11 @@
     background-color: rgb(255, 255, 255);
     border: 2px solid black;
     border-radius: 5px;
-    margin-bottom: 20px;
+    margin: 10px 0px;
     display: flex;
     flex-direction: row;
-    width: 100%;
 }
-
+  
 li {
     flex: 1 1 25%;
     padding: 20px 0px;
@@ -56,40 +37,8 @@ li a {
     text-align: center;
 }
 
-#content {
-    color: rgb(226, 124, 8);
-    text-decoration: none;
-    font-family: helvetica; 
-    font-size: 16px;
-    font-weight: bold;
-    text-align: center;
-}
-
-#input table {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#buttons {
-    margin-top: 10px;
-    text-align: center;
-}
-
 li a:hover {
     color: rgb(0, 0, 0);
-}
-
-#homePageImg {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#description {
-    font-family: helvetica; 
-    font-size: 20px;
-    text-align: center;
-    font-weight: bold;
 }
 
 #footer {
@@ -113,5 +62,9 @@ li a:hover {
     flex: 1 1 25%;
     font-family: helvetica; 
     font-size: 18px;
+    text-align: center;
+}
+
+#message {
     text-align: center;
 }

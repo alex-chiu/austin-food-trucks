@@ -1,9 +1,8 @@
 <?php
 function logout(){
-    setcookie("login", "valid", time()-3600, "/");
+    setcookie("login", "valid", time() - 3600, "/");
 }
 logout();
-
 ?>
 <!DOCTYPE html>
 
@@ -26,7 +25,7 @@ logout();
 <body>
 <div id="container">
     <div id="logo-div">
-        <a href="./homePage.html"><img id="logo" src="./images/logo.jpeg" alt="logo" width="100%"></a>
+        <a href="./homePage.php"><img id="logo" src="./images/logo.jpeg" alt="logo" width="100%"></a>
     </div>
 
     <ul id="nav-bar">

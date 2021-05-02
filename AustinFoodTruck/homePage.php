@@ -22,15 +22,6 @@
         <a href="./homePage.php"><img id="logo" src="./images/logo.jpeg" alt="logo" width="100%"></a>
     </div>
     <div id="login"></div>
-    <?php
-        if(isset($_COOKIE["login"]) and $_COOKIE["login"] == "valid") {
-            echo (' <div id="logout"> 
-                        <form method="POST" action="./logout.php">
-                            <input type="submit" value="Logout" name="logout">
-                        </form>
-                    </div>');
-        }
-    ?>
 
     <ul id="nav-bar">
         <li><a href="./homePage.php">HOME</a></li>
@@ -59,7 +50,7 @@
             <p>Questions or concerns? We're always looking for the newest and best spots to eat around town! <a href="./aboutPage.html#contact-form">Contact Us Here!</a></p>
         </div>
         <div id="signature">
-            <p>Date Updated: 04/29/2021</p>
+            <p>Date Updated: 05/02/2021</p>
             <p>Authors: Group 2</p>
         </div>
     </div>

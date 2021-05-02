@@ -91,8 +91,10 @@
 			<label for="subject">Subject</label>
 			<textarea id="subject" name="subject" placeholder="Leave a comment" style="height:200px"></textarea>
 
-			<input type="submit" value="Send"/>
-			<input type="reset" value="Reset"/>
+			<div id="buttons">
+				<input type="submit" value="Submit"/>
+				<input type="reset" value="Reset"/>
+			</div>
 		</form>
 	</div>
 </body>

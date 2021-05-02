@@ -93,11 +93,16 @@ input[type=text], select, textarea {
     margin-bottom: 16px; 
   }
   
-  input[type=submit] {
+input[type=submit], input[type=reset] {
     background-color: green;
     color: white;
     padding: 12px 20px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-  }
+}
+
+#buttons {
+    display: flex;
+    justify-content: space-evenly;
+}

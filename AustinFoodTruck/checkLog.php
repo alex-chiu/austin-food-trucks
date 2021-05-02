@@ -3,77 +3,64 @@ session_start();
 // Checks if username and password are sent by POST
 if (isset($_POST['username']) && isset($_POST['pwd'])) {
     $login_success = false;
-    $username = $_POST['username'];
+    $user = $_POST['username'];
     $pwd = $_POST['pwd'];
-    $f = fopen("pwd.txt", "r") or die("Unable to Open File!");
-
-    // Check if username and password combination exists
-    while (!feof($f)) {
-        $line = trim(fgets($f), " \n");
-        $line = explode(":", $line);
-        if (strcmp($line[0], $username) and strcmp($line[1], $pwd)) {
-            $login_success = true;
-        }
-    }
-    fclose($f);
-
-    // Upon successful login, sets a cookie and provides story content
-    if ($login_success == true) {
-        $_SESSION['username'] = $_POST['username'];
-        echo("  <p>Login Successful!</p>
-                <p><a href='./homePage.php'>Return to Home Page</a></p>
-        ");
-        setcookie("login", "valid", time() + 86400, "/");
+    
+    // Check if values empty
+    if (($user == '') || ($pwd == '')) {
+        echo(400);
     }
     else {
-        echo("  <p>Login Unsuccessful! Create Account:</p>
-                <div id='input'>
-                    <table>
-                        <tr>
-                            <th><label for='username'>Username</label></th>
-                            <td><input type='text' id='username' name='username'></td>
-                        </tr>
-                        <tr>
-                            <th><label for='pwd'>Password</label></th>
-                            <td><input type='password' id='pwd' name='pwd'></td>
-                        </tr>
-                        <tr>
-                            <th><label for='pwdRepeat'>Repeat Password</label></th>
-                            <td><input type='password' id='pwdRepeat' name='pwdRepeat'></td>
-                        </tr>
-                    </table>
-                </div>
-                <div id='buttons'>
-                    <button id='create'>Create Account</button>
-                </div>
-                <script>
-                    $('#create').click(function() {
-                        console.log('Creating New Account')
-                        $.ajax({
-                        type: 'POST',
-                            url: 'createAcc.php',
-                            data: {
-                                username: $('#username').val(),
-                                pwd: $('#pwd').val(),
-                                pwdRepeat: $('#pwdRepeat').val()
-                            },
-                            success: function(response) {
-                                if (response == 'success') {
-                                    alert('Account Successfully Created! Please Log In!');
-                                    login();
-                                }
-                                else {
-                                    alert('Error! ' + response);
-                                }
-                            }
-                        });
-                    });
+        // Create MySQLI Object
+        $db = new mysqli ('spring-2021.cs.utexas.edu', 'cs329e_bulko_alexch1u', 'bonus3Crunch8sunset', 'cs329e_bulko_alexch1u');
 
-                    function login() {
-                        window.location = './login.html';
+        // Check if Connected
+        if ($db->connect_errno) {
+            die('Connection Error: ' . $db->connect_errno . ": " . $mysqli->connect_error);
+        }
+        else {
+            // Create SQL query
+            $userCommand = "SELECT * FROM foodTruckUsers WHERE username='$user';";
+            $userQuery = $db->query($userCommand);
+    
+            // Check if query failed
+            if (!$userQuery) {
+                die("Query failed: $db->error <br> SQL command = $userCommand");
+            }
+            else {
+                // Check if username already exists
+                if ($userQuery->num_rows > 0) {
+                    $pwdCommand = "SELECT * FROM foodTruckUsers WHERE username='$user' AND pwd='$pwd';";
+                    $pwdQuery = $db->query($pwdCommand);
+                    if (!$pwdQuery) {
+                        die("Query failed: $db->error <br> SQL command = $pwdCommand");
                     }
-                </script>
-        ");
+                    else {
+                        // Check if password is same
+                        if($pwdQuery->num_rows > 0) {
+                            setcookie("login", "valid", time() + 3600, "/");
+                            $_SESSION["username"] = $user;
+                            echo(100);
+                        }
+                        else {
+                            echo(401);
+                        }
+                    }
+                }
+                else {
+                    $newUserCommand = "INSERT INTO foodTruckUsers VALUES('$user', '$pwd');";
+                    $newUserQuery = $db->query($newUserCommand);
+                    if (!$newUserQuery) {
+                        die("Query failed: $db->error <br> SQL command = $newUserCommand");
+                    }
+                    else {
+                        setcookie("login", "valid", time() + 3600, "/");
+                        $_SESSION["username"] = $user;
+                        echo(102);
+                    }
+                }
+            }
+        }
     }
 }
 ?>
