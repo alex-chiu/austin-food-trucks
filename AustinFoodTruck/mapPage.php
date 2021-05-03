@@ -8,10 +8,35 @@
 	<meta name="description" content="map">
 	<meta name="author" content="Group 2">
 	<link rel="stylesheet" href="mapPage.css">
+	<style type="text/css">
+      /* body {
+        margin: 0;
+        padding: 10px 20px 20px;
+        font-family: Arial;
+        font-size: 16px;
+      }
 
-	<script src="map.js" defer></script>
-	<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-    <!-- <script src="https://unpkg.com/@google/markerclustererplus@4.0.1/dist/markerclustererplus.min.js"></script> -->
+      #map-container {
+        padding: 6px;
+        border-width: 1px;
+        border-style: solid;
+        border-color: #ccc #ccc #999 #ccc;
+        -webkit-box-shadow: rgba(64, 64, 64, 0.5) 0 2px 5px;
+        -moz-box-shadow: rgba(64, 64, 64, 0.5) 0 2px 5px;
+        box-shadow: rgba(64, 64, 64, 0.1) 0 2px 5px;
+        width: 600px;
+      }
+
+      #map {
+        width: 600px;
+        height: 400px;
+      } */
+    </style>
+
+	<script src="map.js" defer ></script>
+	<script src="https://unpkg.com/@googlemaps/markerclustererplus/dist/index.min.js"></script>
+
+
 </head> 
 
 <body>
@@ -31,7 +56,7 @@
         ?>
     </ul>
 
-	<div id="map"></div>
+	<div id="map-cintainer"> <div id="map"></div> </div>
 
 	<script
     	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWh3WusfJbB7AKtA7lPMCFq24JEfg3W9s&callback=initMap&libraries=&v=weekly"
