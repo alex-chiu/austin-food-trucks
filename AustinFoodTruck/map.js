@@ -51,15 +51,40 @@ function initMap() {
   });
 
 
+  var contentString =
+    '<div id="content">' +
+    '<div id="siteNotice">' +
+    "</div>" +
+    '<h1 id="firstHeading" class="firstHeading">The Picnic</h1>' +
+    '<div id="bodyContent">' +
+    "<p> Outdoor eating destination featuring a wide variety of food trucks and retail vendors.</p>" +
+    '<p>Website: <a href="https://www.thepicnicaustin.com/"> The Picnic </a>' +
+    '<p>Address: 1720 Barton Springs Rd Austin TX 78704' +
+    "</div>" +
+    "</div>";
+  var infowindow = new google.maps.InfoWindow({
+    content: contentString,
+  });
+
+  const marker1 = new google.maps.Marker({
+    position: { lat: 30.263742748365676, lng: -97.76290793084273 },
+    map,
+    title: "The Picnic",
+  });
+  marker1.addListener("click", () => {
+    infowindow.open(map, marker1);
+  });
+
 
   var markers = []; 
-  for (var i = 0; i < 40; i++) {
+  for (var i = 1; i < 40; i++) {
     var latLng = new google.maps.LatLng(
       locations[i]
     );
     var marker = new google.maps.Marker({
       position: latLng,
     });
+    
     markers.push(marker);
   }
   var markerCluster = new MarkerClusterer(map, markers, {
@@ -67,4 +92,4 @@ function initMap() {
       "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m",
   });
 }
-// google.maps.event.addDomListener(window, "load", initialize);
+google.maps.event.addDomListener(window, "load", initMap());
