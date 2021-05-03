@@ -10,7 +10,8 @@
 	<link rel="stylesheet" href="mapPage.css">
 
 	<script src="map.js" defer></script>
-	<script src="https://unpkg.com/@googlemaps/markerclustererplus/dist/index.min.js"></script>
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <!-- <script src="https://unpkg.com/@google/markerclustererplus@4.0.1/dist/markerclustererplus.min.js"></script> -->
 </head> 
 
 <body>
