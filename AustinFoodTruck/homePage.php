@@ -50,7 +50,7 @@
             <p>Questions or concerns? We're always looking for the newest and best spots to eat around town! <a href="./aboutPage.html#contact-form">Contact Us Here!</a></p>
         </div>
         <div id="signature">
-            <p>Date Updated: 05/02/2021</p>
+            <p>Date Updated: 05/04/2021</p>
             <p>Authors: Group 2</p>
         </div>
     </div>
