@@ -79,6 +79,20 @@
 	<?php
 		session_start();
         if(isset($_COOKIE["login"]) and $_COOKIE["login"] == "valid"){
+			if (isset($_POST["truckSuggested"])){ 
+				$mysqli = new mysqli ("spring-2021.cs.utexas.edu", "cs329e_bulko_edoardop", "viking-leper9none", "cs329e_bulko_edoardop");
+				$truck = $_POST["truckSuggested"];
+				$command = "SELECT * FROM truckssuggestions WHERE suggestion='$truck'";
+				$result = $mysqli->query($command);
+				if ($result->num_rows === 0){
+					$command = "INSERT INTO truckssuggestions VALUES('$truck', 1)";
+					$result = $mysqli->query($command);
+				}
+				else{
+					$command = "UPDATE truckssuggestions SET number=number+1 WHERE suggestion='$truck'";
+					$result = $mysqli->query($command);
+				}
+			}
 			//echo $_SESSION['username'];
 			echo '<table id="buttons">';
 			echo '<tr>';
@@ -107,20 +121,6 @@
 			echo '</tr>';
 			echo '</table>';
 
-			if (isset($_POST["truckSuggested"])){ 
-				$mysqli = new mysqli ("spring-2021.cs.utexas.edu", "cs329e_bulko_edoardop", "viking-leper9none", "cs329e_bulko_edoardop");
-				$truck = $_POST["truckSuggested"];
-				$command = "SELECT * FROM truckssuggestions WHERE suggestion='$truck'";
-				$result = $mysqli->query($command);
-				if ($result->num_rows === 0){
-					$command = "INSERT INTO truckssuggestions VALUES('$truck', 1)";
-					$result = $mysqli->query($command);
-				}
-				else{
-					$command = "UPDATE truckssuggestions SET number=number+1 WHERE suggestion='$truck'";
-					$result = $mysqli->query($command);
-				}
-			}
         }
     ?>
 	<script language = "javascript" type = "text/javascript">
