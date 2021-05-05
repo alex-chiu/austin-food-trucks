@@ -1,15 +1,12 @@
-<html>
-  <head> 
-    <link rel="stylesheet" href="login.css">
-  </head>
-  <body>
-
 <?php
 session_start();
 if (!isset($_COOKIE['login'])) {
-    echo("  <a href='./login.html'>
-                <button id='login-button'>Login</button>
-            </a>
+    echo("  <button id='login-button'>Login</button>
+            <script>
+                $('#login-button').click(function() {
+                    window.location.href = './login.html';
+                });
+            </script>
     ");
 }
 else {
@@ -20,6 +17,3 @@ else {
     "); 
 }
 ?>
-
-    </body>
-</html>

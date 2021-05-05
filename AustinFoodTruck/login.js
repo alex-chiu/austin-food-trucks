@@ -1,5 +1,4 @@
 $('#login').click(function() {
-    console.log('Trying Username and Password')
     $.ajax({
         type: 'POST',
         url: 'checkLog.php',
@@ -12,16 +11,17 @@ $('#login').click(function() {
                 alert('Logged in! Welcome!');
                 window.location.href = './homePage.php';
             }
-            else if (response == '102') {
-                alert('New user created! Welcome!');
-                window.location.href = './homePage.php';
-            }
             else if (response == '400') {
                 alert('Please enter a username and password!');
             }
             else if (response == '401') {
-                alert('Incorrect password! Please try again.')
+                alert('Incorrect username or password! Please try again.')
+                $('#pwd').val('');
             }
         }
     });
 });
+
+$('#create').click(function() {
+    window.location.href = './createAcc.html'
+})

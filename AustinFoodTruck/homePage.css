@@ -14,17 +14,19 @@
     display: block;
 }
 
-#login {
-    color: rgb(226, 124, 8);
-    text-decoration: none;
-    font-family: helvetica; 
-    font-size: 16px;
-    font-weight: bold;
+#login-button, #logout {
+    border-radius: 5px;
+    background-color: rgb(226, 124, 8);
+    border: none;
+    color: rgb(255, 255, 255);
+    padding: 6px 22px;
     text-align: center;
-}
-
-#login-button {
-    margin-top: 60px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #nav-bar {
@@ -65,14 +67,32 @@ li a {
     text-align: center;
 }
 
-#input table {
+#input table, th, td {
     margin-left: auto;
     margin-right: auto;
+    border: 3px solid rgb(226, 124, 8);
+    border-collapse: collapse;
+    padding: 5px;
 }
 
 #buttons {
     margin-top: 10px;
     text-align: center;
+    display: flex;
+    justify-content: space-around;
+    width: 25%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#login, #create {
+    color: rgb(226, 124, 8);
+    text-decoration: none;
+    font-family: helvetica; 
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    flex: 0 1 auto;
 }
 
 li a:hover {

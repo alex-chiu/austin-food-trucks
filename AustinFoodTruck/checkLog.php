@@ -37,7 +37,7 @@ if (isset($_POST['username']) && isset($_POST['pwd'])) {
                     }
                     else {
                         // Check if password is same
-                        if($pwdQuery->num_rows > 0) {
+                        if ($pwdQuery->num_rows > 0) {
                             setcookie("login", "valid", time() + 3600, "/");
                             $_SESSION["username"] = $user;
                             echo(100);
@@ -48,16 +48,7 @@ if (isset($_POST['username']) && isset($_POST['pwd'])) {
                     }
                 }
                 else {
-                    $newUserCommand = "INSERT INTO foodTruckUsers VALUES('$user', '$pwd');";
-                    $newUserQuery = $db->query($newUserCommand);
-                    if (!$newUserQuery) {
-                        die("Query failed: $db->error <br> SQL command = $newUserCommand");
-                    }
-                    else {
-                        setcookie("login", "valid", time() + 3600, "/");
-                        $_SESSION["username"] = $user;
-                        echo(102);
-                    }
+                    echo(401);
                 }
             }
         }

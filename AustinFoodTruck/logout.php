@@ -1,5 +1,5 @@
 <?php
-function logout(){
+function logout() {
     setcookie("login", "valid", time() - 3600, "/");
 }
 logout();
@@ -30,23 +30,21 @@ logout();
 
     <ul id="nav-bar">
         <li><a href="./homePage.php">HOME</a></li>
-        <li><a href="./reviewsPage.html">REVIEWS</a></li>
-        <li><a href="./mapPage.html">MAP</a></li>
-        <li><a href="./aboutPage.html">ABOUT</a></li>
+        <li><a href="./reviewsPage.php">REVIEWS</a></li>
+        <li><a href="./mapPage.php">MAP</a></li>
+        <li><a href="./aboutPage.php">ABOUT</a></li>
     </ul>
 
     <div id="content">
-        <p>Thank you for logging out. Come back and visit us soon! </p>
+        <p>You are now logged out. Come back and visit us soon! </p>
     </div>
-
-    
 
     <div id="footer">
         <div id="contact">
             <p>Questions or concerns? We're always looking for the newest and best spots to eat around town! <a href="./aboutPage.html#contact-form">Contact Us Here!</a></p>
         </div>
         <div id="signature">
-            <p>Date Updated: 04/18/2021</p>
+            <p>Date Updated: 05/05/2021</p>
             <p>Authors: Group 2</p>
         </div>
     </div>
