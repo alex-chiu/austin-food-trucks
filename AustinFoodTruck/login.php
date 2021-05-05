@@ -1,3 +1,9 @@
+<html>
+  <head> 
+    <link rel="stylesheet" href="login.css">
+  </head>
+  <body>
+
 <?php
 session_start();
 if (!isset($_COOKIE['login'])) {
@@ -14,3 +20,6 @@ else {
     "); 
 }
 ?>
+
+    </body>
+</html>

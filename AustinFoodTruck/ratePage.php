@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-	<title>Map - Austin's Food Trucks</title>
+	<title>Rate - Austin's Food Trucks</title>
 	<meta charset="UTF-8">
 	<meta name="description" content="map">
 	<meta name="author" content="Group 2">
@@ -15,12 +15,50 @@
 
 <body>
     <script language = "javascript" type = "text/javascript">
+        var leftRating = false;
+        var selectedTruck = false;
         function displayMessage(){
-            // if food truck name is valid and user selected a rating
-            alert("Thanks for leaving a rating!");
-            // if food truck name is not valid display alert saying not valid
-            
-            // if food truck name is valid but did not select a rating display alert saying pls select rating
+            var ddl = document.getElementById("trucks");
+            var selectedValue = ddl.options[ddl.selectedIndex].value;
+            if (selectedValue == "selecttruck"){
+                alert("Please select a truck");
+                selectedTruck = false;
+            }
+            else{
+                selectedTruck = true;
+            }
+            var radios = document.getElementsByName("stars");
+            if (radios[0].checked){
+                leftRating = true;
+            }
+            if (radios[1].checked){
+                leftRating = true;
+            }
+            if (radios[2].checked){
+                leftRating = true;
+            }
+            if (radios[3].checked){
+                leftRating = true;
+            }
+            if (radios[4].checked){
+                leftRating = true;
+            }
+            if(!leftRating){
+                alert("Please leave a rating")
+            }
+            if (leftRating && selectedTruck){
+                alert("Thanks for leaving a rating!");
+                var dropDown = document.getElementById("trucks");
+                dropDown.selectedIndex = 0;
+                var radList = document.getElementsByName('stars');
+                for (var i = 0; i < radList.length; i++) {
+                    if(radList[i].checked){
+                        radList[i].checked = false;
+                    }
+                }
+
+            }
+
         }
     </script>
 
@@ -43,14 +81,56 @@
     <div id="message">
         <h2>Leave a Review of Your Favorite Food Truck:</h2>
         <p>If you would like to leave a review for a food truck you visited recently, fill out the form below.</p>
-        <p>Please use the correct and complete Food Truck name so we may include it in the correct set of reviews.</p>
         <br><br>
     </div>
 
-    <div id="rateForm">
+    <div align="center" id="rateForm">
         <form action="" align="center">
-            <label for="foodTruckName">Food Truck Name</label>
-            <input type="text" name="foodTruckName" id="foodTruckName" required> <br>
+
+            <label for="trucks">Food Truck Name:</label>
+            <select autofocus required name="trucks" id="trucks" onmousedown="this.value='';" onchange="selection(this.value);">
+                <option value="selecttruck" hidden disabled selected value>(select an option)</option>
+                <option value="1">The Picnic</option>
+                <option value="2">Abu Omar Halal</option>
+                <option value="3">Four Borthers</option>
+                <option value="4">Bananarchy</option>
+                <option value="5">Patrizi's</option>
+                <option value="6">Spicy Boys</option>
+                <option value="7">Arlo's</option>
+                <option value="8">Mi Sabor Oaxaqueno</option>
+                <option value="9">Tony's Jamaican Food</option>
+                <option value="10">T-Loc's Sonora</option>
+                <option value="11">Kebabalicious</option>
+                <option value="12">Baton Creole</option>
+                <option value="13">Don Japanese Kitchen</option>
+                <option value="14">Valentina's Tex Mex BBQ</option>
+                <option value="15">DEE DEE</option>
+                <option value="16">Pepe's Tacos</option>
+                <option value="17">Pinch</option>
+                <option value="18">Longhorn Chicken</option>
+                <option value="19">Espadas de Brazil</option>
+                <option value="20">Cold Cookie Company</option>
+                <option value="21">Wrigleyville South Dogs & Beef</option>
+                <option value="22">Saperlipopette!</option>
+                <option value="23">Little Lucy's</option>
+                <option value="24">Tommy Want Wingy</option>
+                <option value="25">Quezzas</option>
+                <option value="26">Mr Sandwich</option>
+                <option value="27">Taco Baby</option>
+                <option value="28">Burro Cheese Kitchen</option>
+                <option value="29">Gobble Gobble</option>
+                <option value="30">Gebby's BBQ</option>
+                <option value="31">Bummer Burrito</option>
+                <option value="32">Olaya Peruvian Food</option>
+                <option value="33">Monk's Momo</option>
+                <option value="34">Big Fat Greek Gyros</option>
+                <option value="35">La Sirena</option>
+                <option value="36">Via 313</option>
+                <option value="37">East Side King</option>
+                <option value="38">Mickelthwait</option>
+                <option value="39">Holla Mode</option>
+                <option value="40">Wayside</option>       
+            </select>
 
             <p>Star Ratings: </p>
             <input type="radio" id="oneStar" name="stars" value="1">
@@ -68,8 +148,9 @@
             <label for="review">Review of Food Truck</label> <br>
             <textarea id="review" name="review" placeholder="Leave a review" style="height:200px; width:500px"></textarea>
             <br><br>
-            <input type="submit" value="Rate" onclick="displayMessage(); return false"/>
-		    <input type="reset" value="Reset"/>
+            <input id="rateB" align="center" type="submit" value="Rate" onclick="displayMessage(); return false"/>
+		    <br>
+            <input id="resetB" type="reset" value="Reset"/>
         </form>
     </div>
 
