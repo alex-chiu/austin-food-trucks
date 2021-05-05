@@ -65,7 +65,7 @@
 
 	<div id="footer">
 		<div id="contact">
-			<p>Questions or concerns? We're always looking for the newest and best spots to eat around town! <a href="./aboutPage.html#contact-form">Contact Us Here!</a></p>
+			<p>Questions or concerns? We're always looking for the newest and best spots to eat around town! <a href="./aboutPage.php#contact-form">Contact Us Here!</a></p>
 		</div>
 		<div id="signature">
 			<p>Date Updated: 05/02/2021</p>
