@@ -1,3 +1,50 @@
+<?php
+//use on localhost
+$servername = "localhost";
+$username = "root";
+$password = "newpassword";
+$dbname = "AustinFoodTrucksDB";
+$conn = new mysqli ($servername, $username, $password, $dbname);
+
+
+// Create connection
+// $conn = new mysqli ('spring-2021.cs.utexas.edu', 'cs329e_bulko_alexch1u', 'bonus3Crunch8sunset', 'cs329e_bulko_alexch1u');
+  
+  // $conn = new mysqli ('spring-2021.cs.utexas.edu', 'cs329e_bulko_robdmart', 'Strike!Rouge=Cater', 'cs329e_bulko_robdmart');
+  // Check connection
+  if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+  }
+  $query = "SELECT latitude, longitude, truckName, shortDescription, website FROM FoodTrucks";
+  $objects = [];
+
+  if ($result = $conn->query($query)) {
+
+    while ($row = $result->fetch_assoc()) {
+    $singleObject = [];
+    $latitude = $row["latitude"];
+    $longitude = $row["longitude"];
+    $truckName = $row["truckName"];
+    $shortDescription = $row["shortDescription"];
+    $website = $row["website"];
+    $coord = [ "lat" => $latitude, "lng" => $longitude ];
+    array_push($singleObject, $coord, $truckName, $shortDescription, $website);
+    array_push($objects, $singleObject);
+  }
+}
+  $encoded_data = json_encode($objects);
+// [
+//   [
+//     {"lat":"30.26374275","long":"-97.76290793"},
+//     "The Picnic",
+//     "Outdoor eating destination featuring a wide variety of food trucks and retail vendors.",
+//     "https:\/\/www.thepicnicaustin.com\/"
+//     ]
+// ]
+?>
+
+
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -8,32 +55,8 @@
 	<meta name="description" content="map">
 	<meta name="author" content="Group 2">
 	<link rel="stylesheet" href="mapPage.css">
-	<style type="text/css">
-      /* body {
-        margin: 0;
-        padding: 10px 20px 20px;
-        font-family: Arial;
-        font-size: 16px;
-      }
-
-      #map-container {
-        padding: 6px;
-        border-width: 1px;
-        border-style: solid;
-        border-color: #ccc #ccc #999 #ccc;
-        -webkit-box-shadow: rgba(64, 64, 64, 0.5) 0 2px 5px;
-        -moz-box-shadow: rgba(64, 64, 64, 0.5) 0 2px 5px;
-        box-shadow: rgba(64, 64, 64, 0.1) 0 2px 5px;
-        width: 600px;
-      }
-
-      #map {
-        width: 600px;
-        height: 400px;
-      } */
-    </style>
-
-	<script src="map.js" defer ></script>
+  <script type="text/javascript"> var data = <?php echo json_encode($objects); ?>; </script>
+	<script src="map.js" defer >   </script>
 	<script src="https://unpkg.com/@googlemaps/markerclustererplus/dist/index.min.js"></script>
 
 
@@ -55,8 +78,9 @@
         }
         ?>
     </ul>
+  <input type="hidden" id="data" value = "<?php echo $encoded_data ?>" />
+	<div id="map-cntainer"> <div id="map"></div> </div>
 
-	<div id="map-cintainer"> <div id="map"></div> </div>
 
 	<script
     	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWh3WusfJbB7AKtA7lPMCFq24JEfg3W9s&callback=initMap&libraries=&v=weekly"
@@ -76,3 +100,5 @@
 
 </body>
 </html>
+
+
