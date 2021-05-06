@@ -55,7 +55,7 @@
 	<meta name="description" content="map">
 	<meta name="author" content="Group 2">
 	<link rel="stylesheet" href="mapPage.css">
-  <script type="text/javascript"> var data = <?php echo json_encode($objects); ?>; </script>
+  <script type="text/javascript"> var data = ' <?php echo json_encode($objects); ?> ' </script>
 	<script src="map.js" defer >   </script>
 	<script src="https://unpkg.com/@googlemaps/markerclustererplus/dist/index.min.js"></script>
 
