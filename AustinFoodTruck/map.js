@@ -4,19 +4,24 @@ function initMap() {
     zoom: 12,
     center: { lat: 30.26715 , lng: -97.74306 },
   });
-  // Set LatLng and title text for the markers. The first marker (Boynton Pass)
-  // receives the initial focus when tab is pressed. Use arrow keys to
-  // move between markers; press tab again to cycle through the map controls.
-  const truckdata = data;
-  // console.log(data)
+
+
+  
+  // Set LatLng and title text for the markers. 
+  var truckdata = data;
+  // console.log(truckdata);
   // Create an info window to share between markers.
   const infoWindow = new google.maps.InfoWindow();
   // Create the markers.
   var markers = [];
-
+  var count = 0;
   for(var i  = 0; i < truckdata.length; i++){
-    console.log(truckdata[i][0]);
+  	count++;
+  	// var latitudeLongitutde = { truckdata[i][0]["lat"], truckdata[i][0]["lng"] }
+  	// console.log(latitudeLongitutde);
     var latLng = new google.maps.LatLng( truckdata[i][0]["lat"], truckdata[i][0]["lng"] );
+    // var latLng = new google.maps.LatLng(latitudeLongitutde);
+    
     const marker = new google.maps.Marker({
       position: latLng,
       map,
@@ -31,6 +36,7 @@ function initMap() {
     });
     markers.push(marker);
   };
+  console.log(count);
   var markerCluster = new MarkerClusterer(map, markers, {
     imagePath:
       "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m",

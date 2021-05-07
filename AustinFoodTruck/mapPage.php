@@ -21,18 +21,23 @@
   if ($result = $conn->query($query)) {
 
     while ($row = $result->fetch_assoc()) {
-    $singleObject = [];
-    $latitude = $row["latitude"];
-    $longitude = $row["longitude"];
-    $truckName = $row["truckName"];
-    $shortDescription = $row["shortDescription"];
-    $website = $row["website"];
-    $coord = [ "lat" => $latitude, "lng" => $longitude ];
-    array_push($singleObject, $coord, $truckName, $shortDescription, $website);
-    array_push($objects, $singleObject);
-  }
+	    $singleObject = [];
+	    $latitude = $row["latitude"];
+	    $longitude = $row["longitude"];
+	    $truckName = $row["truckName"];
+	    $shortDescription = $row["shortDescription"];
+	    $website = $row["website"];
+	    $coord = [ "lat" => $latitude, "lng" => $longitude ];
+	    array_push($singleObject, $coord, $truckName, $shortDescription, $website);
+	    array_push($objects, $singleObject);
+	  }
+	  
 }
-  $encoded_data = json_encode($objects);
+ 	$json = json_encode($objects, JSON_INVALID_UTF8_IGNORE);
+ // 	if ($json)
+ //    	echo $json;
+	// else
+	//     echo json_last_error_msg();
 // [
 //   [
 //     {"lat":"30.26374275","long":"-97.76290793"},
@@ -55,7 +60,10 @@
 	<meta name="description" content="map">
 	<meta name="author" content="Group 2">
 	<link rel="stylesheet" href="mapPage.css">
-  <script type="text/javascript"> var data = ' <?php echo json_encode($objects); ?> ' </script>
+	<script type="text/javascript"> 
+		// console.log( <?php echo $json; ?> );
+	</script>
+  	<script type="text/javascript"> var data = <?php echo $json; ?> </script>
 	<script src="map.js" defer >   </script>
 	<script src="https://unpkg.com/@googlemaps/markerclustererplus/dist/index.min.js"></script>
 
@@ -78,7 +86,7 @@
         }
         ?>
     </ul>
-  <input type="hidden" id="data" value = "<?php echo $encoded_data ?>" />
+  	<input type="hidden" id="data" value = "<?php echo $json ?>" >
 	<div id="map-cntainer"> <div id="map"></div> </div>
 
 

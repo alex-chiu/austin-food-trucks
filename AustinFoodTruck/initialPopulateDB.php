@@ -28,9 +28,12 @@ $sql = "LOAD DATA LOCAL INFILE '~/../../projects/coursework/2021-spring/cs329e-b
       FIELDS TERMINATED BY ','
       LINES TERMINATED BY '\n'
       ";
-
-
-$load = mysqli_query($conn, $sql);
+if($loaded = $conn->query($load)){
+  echo "successfully loaded DB";
+}else{
+  echo "failed";
+  echo $load;
+}
 //show Food Trucks
 
 $query = "SELECT * FROM FoodTrucks";
