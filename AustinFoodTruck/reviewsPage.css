@@ -144,10 +144,6 @@ a[href^="tel"]::before {
     display:block;
 }
 
-#best {
-    display:none;
-}
-
 #italian {
     display:none;
 }

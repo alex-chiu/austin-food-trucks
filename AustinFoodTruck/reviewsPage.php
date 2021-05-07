@@ -144,7 +144,6 @@
 		<label for="trucks">Let me see:</label>
 		<select name="trucks" id="trucks" onmousedown="this.value='';" onchange="selection(this.value);">
 			<option value="all">All</option>
-			<option value="best">Highest Rated</option>
 			<option value="mexican">Mexican Food</option>
 			<option value="mediterranean">Mediterranean Food</option>
 			<option value="asian">Asian Food</option>
@@ -1444,111 +1443,6 @@
 			</th>
 		</tr>
 		
-	</table>
-	</div>
-
-
-
-
-	<div id="best">
-	<table id="allTrucks" border="1" style="width:75%">
-		<tr>
-			<th width="20%">
-				<div class="dropdown">
-					<img class="trucks" src="./images/truckPicnic.jpg" width="140px" height= "150px">
-					<div class="dropdown-content">
-						<img class="trucks" src="./images/truckPicnic.jpg" width="280px" height= "300px">
-						<div class="desc">The Picnic at Barton Springs</div>
-					</div>
-				</div>
-				
-			</th>
-			<th class="truckInfo">
-				<table style="width:100%" height= "150px">
-					<tr>
-						<th colspan="2" class="truckNames">The Picnic</th>
-						<th></th>
-						<th class="ratings">4.6</th>
-					</tr>
-
-					<tr>
-						<th colspan="3">Outdoor eating destination featuring a wide variety of food trucks and retail vendors.</th>
-					</tr>
-
-					<tr>
-						<th width="33%" class="num"><a href="mailto:PicnicAustin@gmail.com">PicnicAustin@gmail.com</a></th>
-						<th width="33%" class="addy">1720 Barton Springs Rd, Austin, TX 78704</th>
-						<th width="33%" class="websites"><a href="https://www.thepicnicaustin.com/" target="_blank">Website!</a></th>
-					</tr>
-				</table>
-			</th>
-		</tr>
-
-		<tr>
-			<th width="20%">
-				<div class="dropdown">
-					<img class="trucks" src="./images/trucks/truckTacoBaby.jpeg" width="140px" height= "150px">
-					<div class="dropdown-content">
-						<img class="trucks" src="./images/trucks/truckTacoBaby.jpeg" width="280px" height= "300px">
-						<div class="desc">Taco Baby</div>
-					</div>
-				</div>
-				
-			</th>
-			<th class="truckInfo">
-				<table style="width:100%" height= "150px">
-					<tr>
-						<th colspan="2" class="truckNames">Taco Baby</th>
-						<th></th>
-						<th class="ratings">4.9</th>
-					</tr>
-
-					<tr>
-						<th colspan="3">Carnitas is top notch and the price is right. Has veggie and mahi mahi tacos. Easy to make healthy and gluten free. Easy winner for chips and queso.</th>
-						
-					</tr>
-
-					<tr>
-						<th width="33%" class="num"><a href="tel:+19177508576">(917) 750-8576</a></th>
-						<th width="33%" class="addy">75 Rainey St, Austin, TX 78701</th>
-						<th width="33%" class="websites"><a href="https://www.tacobabyaustin.com/" target=_blank>Website!</a></th>
-					</tr>
-				</table>
-			</th>
-		</tr>
-
-		<tr>
-			<th width="20%">
-				<div class="dropdown">
-					<img class="trucks" src="./images/trucks/truckGebbysBBQ.jpeg" width="140px" height= "150px">
-					<div class="dropdown-content">
-						<img class="trucks" src="./images/trucks/truckGebbysBBQ.jpeg" width="280px" height= "300px">
-						<div class="desc">Gebby's BBQ</div>
-					</div>
-				</div>
-				
-			</th>
-			<th class="truckInfo">
-				<table style="width:100%" height= "150px">
-					<tr>
-						<th colspan="2" class="truckNames">Gebby's BBQ</th>
-						<th></th>
-						<th class="ratings">4.6</th>
-					</tr>
-
-					<tr>
-						<th colspan="3">Sliced brisket sandwich and gouda mac and cheese are mouth watering. Lots of common area seating. Easy, filling, and reliable.</th>
-						
-					</tr>
-
-					<tr>
-						<th width="33%" class="num"><a href="tel:+15122719448">(512) 271-9448</a></th>
-						<th width="33%" class="addy">80 Rainey St, Austin, TX 78701</th>
-						<th width="33%" class="websites"><a href="http://gebbysbbq.com/" target=_blank>Website!</a></th>
-					</tr>
-				</table>
-			</th>
-		</tr>
 	</table>
 	</div>
 
@@ -2863,7 +2757,7 @@
 			<p>Questions or concerns? We're always looking for the newest and best spots to eat around town! <a href="./aboutPage.php#contact-form">Contact Us Here!</a></p>
 		</div>
 		<div id="signature">
-			<p>Date Updated: 05/02/2021</p>
+			<p>Date Updated: 05/07/2021</p>
 			<p>Authors: Group 2</p>
 		</div>
 	</div>

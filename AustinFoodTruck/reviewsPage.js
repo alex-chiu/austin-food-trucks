@@ -1,17 +1,8 @@
-selections = ["all", "best", "italian", "sa", "mexican", "asian", "mediterranean", "dessert", "american"]
+selections = ["all", "italian", "sa", "mexican", "asian", "mediterranean", "dessert", "american"]
 
 function selection(value){
    if (value == "all"){
       document.getElementById("all").style.display = "block";
-      for (let i = 0; i <= selections.length; i++){
-         if (selections[i] != value){
-            document.getElementById(selections[i]).style.display = "none";
-         }
-      }
-   }
-
-   if (value == "best"){
-      document.getElementById("best").style.display = "block";
       for (let i = 0; i <= selections.length; i++){
          if (selections[i] != value){
             document.getElementById(selections[i]).style.display = "none";
