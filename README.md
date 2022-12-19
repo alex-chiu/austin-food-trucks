@@ -1,7 +1,5 @@
 # AustinFoodTrucks
-Website created for the class C S 329E, Elements of Web Programming
-
-Site is currently without a host.
+Website created for C S 329E, Elements of Web Programming. Site is currently without a host.
 
 ## Features
 Showcases various food trucks located in Austin. Makes use of various basic elements of web development, such as HTML, CSS, JavaScript, PHP, MySQL, and AJAX.
