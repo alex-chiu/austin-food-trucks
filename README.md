@@ -4,6 +4,9 @@ Website created for C S 329E, Elements of Web Programming. Site is currently wit
 ## Features
 Showcases various food trucks located in Austin. Makes use of various basic elements of web development, such as HTML, CSS, JavaScript, PHP, MySQL, and AJAX.
 
+## License
+MIT
+
 ## Contributors:
 
 Alex Chiu - https://github.com/alex-chiu
